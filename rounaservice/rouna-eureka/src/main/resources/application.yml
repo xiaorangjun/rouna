@@ -1,0 +1,11 @@
+server:
+ port: 8761
+eureka:
+ instance:
+   prefer-ip-address: true
+   hostname: localhost
+ client:
+   register-with-eureka: false
+   fetch-registry: false
+   serviceUrl:
+    default: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
