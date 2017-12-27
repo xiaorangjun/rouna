@@ -12,6 +12,7 @@
         <module>rouna-eureka</module>
         <module>rouna-config</module>
         <module>rouna-system</module>
+        <module>rouna-gateway</module>
     </modules>
 
 
