@@ -1,0 +1,28 @@
+spring:
+ application:
+  name: Rouna-Config
+ cloud:
+  config:
+#    uri: http://${eureka.host:localhost}:${server.port}
+    server:
+      native:
+        search-locations: classpath:/config
+ profiles:
+   active: native
+server:
+  port: 8888
+
+eureka:
+ instance:
+   prefer-ip-address: true
+   instance-id:  ${spring.cloud.client.ipAddress}:${server.port}
+ client:
+  healthcheck:
+   enabled: true
+  register-with-eureka: true
+  fetch-registry: true
+  service-url:
+   defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+
+
+
