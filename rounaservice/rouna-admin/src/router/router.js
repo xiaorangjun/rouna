@@ -60,39 +60,6 @@ export const appRouter = [
             { path: 'index', title: '首页', name: 'overview_index', component: resolve => { require(['@/views/overview/index.vue'], resolve); } },
             { path: 'mark', title: '成绩', name: 'overview_mark', component: resolve => { require(['@/views/overview/mark.vue'], resolve); } }
         ]
-    },
-    {
-        path: '/group',
-        icon: 'ios-folder',
-        name: 'group',
-        title: 'Group',
-        component: Main,
-        children: [
-            {
-                path: 'page1',
-                icon: 'ios-paper-outline',
-                name: 'page1',
-                title: 'Page1',
-                component: resolve => { require(['@/views/group/page1/page1.vue'], resolve); }
-            },
-            {
-                path: 'page2',
-                icon: 'ios-list-outline',
-                name: 'page2',
-                title: 'Page2',
-                component: resolve => { require(['@/views/group/page2/page2.vue'], resolve); }
-            }
-        ]
-    },
-    {
-        path: '/page',
-        icon: 'ios-paper',
-        title: 'Page',
-        name: 'page',
-        component: Main,
-        children: [
-            { path: 'index', title: 'Page', name: 'page_index', component: resolve => { require(['@/views/page/page.vue'], resolve); } }
-        ]
     }
 ];
 
