@@ -16,7 +16,7 @@ spring:
 #    数据库用户名
     username: bdm257941252
 #    数据库密码
-    password: xiao88520
+    password: ********
 #    password: '{cipher}UGJ1NEAxMjM='
 #    password: ${db.password}
     url: jdbc:mysql://bdm257941252.my3w.com:3306/bdm257941252_db?useUnicode=true&characterEncoding=utf-8
