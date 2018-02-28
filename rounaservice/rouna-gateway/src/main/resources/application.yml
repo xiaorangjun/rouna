@@ -1,6 +1,14 @@
 spring:
   application:
     name: rouna-gateway # 应用名
+  cloud:
+      config:
+        enabled: true
+        profile: dev
+        label: master
+        discovery:
+          enabled: true
+          service-id: Rouna-Config
 server:
   port: 8768 #Zuul Server的端口号
 eureka:
@@ -13,7 +21,7 @@ eureka:
   register-with-eureka: true
   fetch-registry: true
   service-url:
-   defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+   defaultZone: http://${eureka.host:120.78.82.125}:${eureka.port:8761}/eureka/
 
 zuul:
   routes:
