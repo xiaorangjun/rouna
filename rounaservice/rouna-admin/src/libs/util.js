@@ -1,4 +1,5 @@
 import axios from 'axios';
+import store from '../store';
 import env from '../../build/env';
 import semver from 'semver';
 import packjson from '../../package.json';
@@ -7,15 +8,32 @@ let util = {
 
 };
 util.title = function (title) {
-    title = title || 'iView admin';
+    title = title || 'rouna admin';
     window.document.title = title;
 };
 
-const ajaxUrl = env === 'development'
-    ? 'http://127.0.0.1:8888'
-    : env === 'production'
-    ? 'https://www.url.com'
-    : 'https://debug.url.com';
+const ajaxUrl = (env === 'development') ? 'http://127.0.0.1:8888' : (env === 'production') ? 'https://www.url.com' : 'https://debug.url.com';
+
+axios.interceptors.request.use(function (config) {
+    // 在发送请求之前做些什么
+    let token = store.state.token;
+    if (token) {  // 判断是否存在token，如果存在的话，则每个http header都加上token
+        config.headers.Authorization = token;
+    }
+    return config;
+}, function (error) {
+    // 对请求错误做些什么
+    return Promise.reject(error);
+});
+
+// 添加响应拦截器
+axios.interceptors.response.use(function (response) {
+    // 对响应数据做点什么
+    return response;
+}, function (error) {
+    // 对响应错误做点什么
+    return Promise.reject(error);
+});
 
 util.ajax = axios.create({
     baseURL: ajaxUrl,

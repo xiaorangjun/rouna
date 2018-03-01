@@ -52,13 +52,34 @@ export const otherRouter = {
 export const appRouter = [
     {
         path: '/overview',
-        // icon: 'ios-paper',
+        icon: 'cube',
         title: '概览',
         name: 'OverView',
         component: Main,
         children: [
             { path: 'index', title: '首页', name: 'overview_index', component: resolve => { require(['@/views/overview/index.vue'], resolve); } },
             { path: 'mark', title: '成绩', name: 'overview_mark', component: resolve => { require(['@/views/overview/mark.vue'], resolve); } }
+        ]
+    },
+    {
+        path: '/',
+        icon: 'settings',
+        title: '系统设置',
+        name: 'SystemSetting',
+        component: Main,
+        children: [
+            { path: 'index', title: '成员管理', name: 'members', component: resolve => { require(['@/views/overview/index.vue'], resolve); } },
+            { path: 'config', title: '配置管理', name: 'setting', component: resolve => { require(['@/views/overview/mark.vue'], resolve); } }
+        ]
+    },
+    {
+        path: '/',
+        icon: 'stats-bars',
+        title: '统计分析',
+        name: 'Analysis',
+        component: Main,
+        children: [
+            { path: 'index', title: '综合分析', name: 'total', component: resolve => { require(['@/views/overview/index.vue'], resolve); } },
         ]
     }
 ];

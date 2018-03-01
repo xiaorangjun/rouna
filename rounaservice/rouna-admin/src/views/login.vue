@@ -38,6 +38,7 @@
 
 <script>
 import Cookies from 'js-cookie';
+import utils from '../libs/util';
 export default {
     data () {
         return {
@@ -59,6 +60,11 @@ export default {
         handleSubmit () {
             this.$refs.loginForm.validate((valid) => {
                 if (valid) {
+                    utils.ajax.get("/test").then(data=>{
+                        console.info(data);
+                    }).catch(data=>{
+                        console.info(data);
+                    })
                     Cookies.set('user', this.form.userName);
                     this.$router.push({
                         name: 'home_index'
