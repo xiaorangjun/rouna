@@ -9,7 +9,6 @@ import com.rouna.service.main.api.RounaTest;
 import com.rouna.service.main.model.RounaClass;
 import com.rouna.service.main.service.*;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.collect.Maps;
 import com.rouna.service.main.config.mybatis.interceptor.PageResponseBean;
+import io.swagger.annotations.ApiModelProperty;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -27,7 +28,7 @@ public abstract class BaseEntity<T> implements Serializable {
     /**
      * 实体编号（唯一标识）
      */
-    @JsonProperty("ID")
+    @ApiModelProperty(value = "id",hidden = true)
     protected String id;
 
     /**

@@ -13,21 +13,15 @@ import java.util.List;
  * Created by Administrator on 2017/12/10.
  */
 public interface RounaClassMapper extends CrudMapper<RounaClass> {
-    @Override
     @Select("select * from rouna_class where id = #{id}")
     RounaClass getById(String id);
 
-    @Override
     @Select("select * from rouna_class where id = #{id}")
     RounaClass get(RounaClass entity);
 
     @Override
     @Select("select * from rouna_class")
     List<RounaClass> findList(RounaClass entity);
-
-    @Override
-    @Select("select * from rouna_class")
-    List<RounaClass> findAllList(RounaClass entity);
 
     @Override
     @Insert("insert into rouna_class (id,name,gradeId) values(#{id},#{name},#{gradeId})")

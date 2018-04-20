@@ -26,10 +26,6 @@ public interface RounaStudentMapper extends CrudMapper<RounaStudentEntity> {
     List<RounaStudentEntity> findList(RounaStudentEntity entity);
 
     @Override
-    @Select("select * from rouna_student")
-    List<RounaStudentEntity> findAllList(RounaStudentEntity entity);
-
-    @Override
     @Insert("insert into rouna_student (id,name,classid,no,identity_no,sex,create_by,create_user,create_date,del_flag) " +
             "values(#{id},#{name},#{classId},#{no},#{identityNo},#{sex},#{createBy},#{createUser},#{createDate},0)")
     int insert(RounaStudentEntity entity);

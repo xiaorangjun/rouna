@@ -28,10 +28,10 @@ public class Swagger2 {
     }
     private ApiInfo apiInfo() {// 创建API的基本信息，这些信息会在Swagger UI中进行显示
         return new ApiInfoBuilder()
-                .title("Spring Boot中使用Swagger2构建RESTful APIs")// API 标题
-                .description("rdcloud-jpa提供的RESTful APIs")// API描述
+                .title("Rouna中文网官方API V1.0")// API 标题
+                .description("")// API描述
                 .version("1.0")// 版本号
-                .contact(new Contact("Blazzer","http://www.rouna.com","137222705@qq.com"))
+                .contact(new Contact("Blazzer","http://www.rouna.xyz","137222705@qq.com"))
                 .build();
     }
 }

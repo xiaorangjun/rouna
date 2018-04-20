@@ -16,24 +16,24 @@
         <div class="main-header-con" :style="{paddingLeft: shrink?'60px':'200px'}">
             <div class="main-header">
                 <div class="navicon-con">
-                    <Button :style="{transform: 'rotateZ(' + (this.shrink ? '-90' : '0') + 'deg)'}" type="text" @click="toggleClick">
+                    <button :style="{transform: 'rotateZ(' + (this.shrink ? '-90' : '0') + 'deg)'}" type="text" @click="toggleClick">
                         <Icon type="navicon" size="32"></Icon>
-                    </Button>
+                    </button>
                 </div>
                 <div class="header-avator-con">
                     <div class="user-dropdown-menu-con">
-                        <Row type="flex" justify="end" align="middle" class="user-dropdown-innercon">
-                            <Dropdown transfer trigger="click" @on-click="handleClickUserDropdown">
+                        <row type="flex" justify="end" align="middle" class="user-dropdown-innercon">
+                            <dropdown transfer trigger="click" @on-click="handleClickUserDropdown">
                                 <a href="javascript:void(0)">
                                     <span class="main-user-name">{{ userName }}</span>
                                     <Icon type="arrow-down-b"></Icon>
                                 </a>
-                                <DropdownMenu slot="list">
-                                    <DropdownItem name="loginout" divided>退出登录</DropdownItem>
-                                </DropdownMenu>
-                            </Dropdown>
-                            <Avatar icon="person" style="background: #619fe7;margin-left:10px;"></Avatar>
-                        </Row>
+                                <dropdownMenu slot="list">
+                                    <dropdownItem name="loginout" divided>退出登录</dropdownItem>
+                                </dropdownMenu>
+                            </dropdown>
+                            <avatar icon="person" style="background: #619fe7;margin-left:10px;"></Avatar>
+                        </row>
                     </div>
                 </div>
             </div>
@@ -72,6 +72,7 @@ export default {
             this.shrink = !this.shrink;
         },
         handleClickUserDropdown (name) {
+            this.$store.dispatch("logout");
             this.$router.push({
                 name: 'login'
             });

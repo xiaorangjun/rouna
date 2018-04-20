@@ -26,10 +26,6 @@ public interface RounaSubjectMapper extends CrudMapper<RounaSubjectEntity> {
     List<RounaSubjectEntity> findList(RounaSubjectEntity entity);
 
     @Override
-    @Select("select * from rouna_subject")
-    List<RounaSubjectEntity> findAllList(RounaSubjectEntity entity);
-
-    @Override
     @Insert("insert into rouna_subject (id,name,create_by,create_user,create_date,del_flag) values(#{id},#{name},#{createBy},#{createUser},#{createDate},0)")
     int insert(RounaSubjectEntity entity);
 

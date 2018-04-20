@@ -81,6 +81,17 @@ export const appRouter = [
         children: [
             { path: 'index', title: '综合分析', name: 'total', component: resolve => { require(['@/views/overview/index.vue'], resolve); } },
         ]
+    },
+    {
+        path: '/',
+        icon: 'stats-bars',
+        title: '测试',
+        name: 'Test',
+        component: Main,
+        children: [
+            { path: 'test/index', title: '测试1', name: 'test', component: resolve => { require(['@/views/modules/test/index.vue'], resolve); } },
+            { path: 'test2', title: '测试2', name: 'test2', component: resolve => { require(['@/views/modules/test/index.vue'], resolve); } },
+        ]
     }
 ];
 

@@ -3,6 +3,7 @@ package com.rouna.service.main.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rouna.service.main.utils.IdGen;
+import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.validator.constraints.Length;
 
 import java.util.Date;
@@ -15,13 +16,21 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
 
     private static final long serialVersionUID = 1L;
 
+    @ApiModelProperty(hidden = true)
     protected String remarks;	// 备注
+    @ApiModelProperty(hidden = true)
     protected String createBy;	// 创建者
+    @ApiModelProperty(hidden = true)
     protected String createUser;// 登录名
+    @ApiModelProperty(hidden = true)
     protected Date createDate;	// 创建日期
+    @ApiModelProperty(hidden = true)
     protected String updateBy;	// 更新者
+    @ApiModelProperty(hidden = true)
     protected String updateUser;// 登录名
+    @ApiModelProperty(hidden = true)
     protected Date updateDate;	// 更新日期
+    @ApiModelProperty(hidden = true)
     protected String delFlag; 	// 删除标记（0：正常；1：删除；2：审核）
 
     public DataEntity() {
@@ -82,6 +91,7 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
     }
+
 
     @JsonIgnore
     @Length(min=1, max=1)

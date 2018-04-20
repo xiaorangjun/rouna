@@ -29,14 +29,6 @@ public interface CrudMapper<T> {
      */
     List<T> findList(T entity);
 
-    /**
-     * 查询所有数据列表
-     *
-     * @param entity
-     * @return
-     */
-    List<T> findAllList(T entity);
-
 
     /**
      * 插入数据
@@ -63,6 +55,12 @@ public interface CrudMapper<T> {
      */
     int delete(T entity);
 
-
+    /**
+     * 删除数据（一般为逻辑删除，更新del_flag字段为1）
+     *
+     * @param id
+     * @return
+     */
+    int deleteById(String id);
 
 }

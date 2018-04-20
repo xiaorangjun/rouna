@@ -90,10 +90,6 @@
         methods:{
             fetchData() {
                 console.info("route changed");
-//                axios.get("http://192.168.1.101:18081/test").then(function(res){
-//                    console.info(res);
-////                    _this.data = res;
-//                })
             }
         }
     }

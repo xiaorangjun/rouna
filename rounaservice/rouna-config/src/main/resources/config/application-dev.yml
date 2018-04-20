@@ -12,15 +12,11 @@ spring:
   #  数据库配置
   datasource:
     name: datasource
-    driver-class-name: com.mysql.jdbc.Driver
-#    数据库用户名
-    username: bdm257941252
-#    数据库密码
-    password: ********
-#    password: '{cipher}UGJ1NEAxMjM='
-#    password: ${db.password}
-    url: jdbc:mysql://bdm257941252.my3w.com:3306/bdm257941252_db?useUnicode=true&characterEncoding=utf-8
-#    url: jdbc:mysql://{db.url}:{db.port}/{db.name}?useUnicode=true&characterEncoding=utf-8
-    platform: mysql
-    sql-script-encoding: utf-8
-    continueOnError: false
+    url: jdbc:mysql://u6o5r8fa.2326.dnstoo.com:5505/rouna?useUnicode=true&characterEncoding=utf-8
+    username: rouna_f
+    filters: config
+    connectionProperties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALKlNyM8YnOdsrmVZ76hHaP6a2kg0pCnYyNjFUYpa747RFF57bZIbGtsCtaw354H4y1D96TNQ2+8tn0CCcIKidkCAwEAAQ==
+    password: ZfgZ4vKq/dKYkBIuCjLAGVJD2aG1lYSyKbbUJxdKW1At7Tl2AKdF6u//qgPDDBI6eiGzUkMyq5Ilpe44Oa0gow==
+    initialSize: 5
+    minIdle: 5
+    maxActive: 10

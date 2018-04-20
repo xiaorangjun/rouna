@@ -26,9 +26,6 @@ public interface RounaMarkMapper extends CrudMapper<RounaMarkEntity> {
     @Select("select * from rouna_mark")
     List<RounaMarkEntity> findList(RounaMarkEntity entity);
 
-    @Override
-    @Select("select * from rouna_mark")
-    List<RounaMarkEntity> findAllList(RounaMarkEntity entity);
 
     @Override
     @Insert("insert into rouna_mark (id,test_id,student_id,subject_id,subject_mark,create_by,create_user,create_date,del_flag) " +

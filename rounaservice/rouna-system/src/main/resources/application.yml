@@ -14,7 +14,7 @@ eureka:
   register-with-eureka: true
   fetch-registry: true
   service-url:
-   defaultZone: http://${eureka.host:120.78.82.125}:${eureka.port:8761}/eureka/
+   defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
 spring:
   application:
     name: rouna-system

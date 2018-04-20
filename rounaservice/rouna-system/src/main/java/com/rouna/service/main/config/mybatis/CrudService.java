@@ -93,5 +93,15 @@ public  abstract class CrudService<M extends CrudMapper<T>,T extends DataEntity<
        return mapper.delete(entity);
     }
 
+    /**
+     * 删除数据
+     *
+     * @param entity
+     */
+    @Transactional(readOnly = false)
+    public int deleteById(String id) {
+        return mapper.deleteById(id);
+    }
+
 
 }

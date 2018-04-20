@@ -1,6 +1,4 @@
-import axios from 'axios';
 import store from '../store';
-import env from '../../build/env';
 import semver from 'semver';
 import packjson from '../../package.json';
 
@@ -8,37 +6,9 @@ let util = {
 
 };
 util.title = function (title) {
-    title = title || 'rouna admin';
+    title = title || 'Rouna';
     window.document.title = title;
 };
-
-const ajaxUrl = (env === 'development') ? 'http://127.0.0.1:8888' : (env === 'production') ? 'https://www.url.com' : 'https://debug.url.com';
-
-axios.interceptors.request.use(function (config) {
-    // 在发送请求之前做些什么
-    let token = store.state.token;
-    if (token) {  // 判断是否存在token，如果存在的话，则每个http header都加上token
-        config.headers.Authorization = token;
-    }
-    return config;
-}, function (error) {
-    // 对请求错误做些什么
-    return Promise.reject(error);
-});
-
-// 添加响应拦截器
-axios.interceptors.response.use(function (response) {
-    // 对响应数据做点什么
-    return response;
-}, function (error) {
-    // 对响应错误做点什么
-    return Promise.reject(error);
-});
-
-util.ajax = axios.create({
-    baseURL: ajaxUrl,
-    timeout: 30000
-});
 
 util.inOf = function (arr, targetArr) {
     let res = true;
@@ -269,21 +239,6 @@ util.toDefaultPage = function (routers, name, route, next) {
 util.fullscreenEvent = function (vm) {
     // 权限菜单过滤相关
     vm.$store.commit('updateMenulist');
-};
-
-util.checkUpdate = function (vm) {
-    axios.get('https://api.github.com/repos/iview/iview-admin/releases/latest').then(res => {
-        let version = res.data.tag_name;
-        vm.$Notice.config({
-            duration: 0
-        });
-        if (semver.lt(packjson.version, version)) {
-            vm.$Notice.info({
-                title: 'iview-admin更新啦',
-                desc: '<p>iView-admin更新到了' + version + '了，去看看有哪些变化吧</p><a style="font-size:13px;" href="https://github.com/iview/iview-admin/releases" target="_blank">前往github查看</a>'
-            });
-        }
-    });
 };
 
 export default util;
